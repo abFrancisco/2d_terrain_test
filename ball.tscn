@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dscyk0hjvru6l"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ybpuo"]
+friction = 0.0
+absorbent = true
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_l5bhc"]
+radius = 0.4
+
+[sub_resource type="SphereMesh" id="SphereMesh_22q1h"]
+radial_segments = 16
+rings = 8
+
+[node name="Ball" type="RigidBody3D"]
+physics_material_override = SubResource("PhysicsMaterial_ybpuo")
+gravity_scale = 2.0
+continuous_cd = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_l5bhc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_22q1h")
