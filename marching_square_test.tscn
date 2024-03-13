@@ -1,25 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dpiwv7alfflkc"]
+[gd_scene load_steps=2 format=3 uid="uid://dpiwv7alfflkc"]
 
 [ext_resource type="Script" path="res://marching_square_test.gd" id="1_lyggd"]
-[ext_resource type="Texture2D" uid="uid://dihjtq0imt6pb" path="res://Textures/fouriesburg_mountain_lookout_2_4k.hdr" id="2_yll0g"]
-
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_fk25f"]
-panorama = ExtResource("2_yll0g")
-
-[sub_resource type="Sky" id="Sky_i5cf4"]
-sky_material = SubResource("PanoramaSkyMaterial_fk25f")
-
-[sub_resource type="Environment" id="Environment_cccvb"]
-background_mode = 2
-sky = SubResource("Sky_i5cf4")
 
 [node name="MarchingSquareTest" type="Node2D"]
 script = ExtResource("1_lyggd")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_cccvb")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 unique_name_in_owner = true
